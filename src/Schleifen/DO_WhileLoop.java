@@ -18,5 +18,4 @@ public class DO_WhileLoop {
 
         System.out.println("Nach!");
     }
-
 }
