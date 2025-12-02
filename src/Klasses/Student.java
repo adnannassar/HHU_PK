@@ -15,6 +15,11 @@ public class Student {
         this.adresse = adresse;
     }
 
+    public Student(String name){
+        this.name = name;
+    }
+
+
     // getter
     public String getName() {
         return name;
