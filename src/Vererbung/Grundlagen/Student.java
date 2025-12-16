@@ -1,7 +1,8 @@
-package Verebung;
+package Vererbung.Grundlagen;
 
 public class Student extends Person {
     private int matrikelnummer;
+    public static int x;
 
     public Student(String name, int age, int matrikelnummer) {
         super(name, age);
@@ -16,9 +17,13 @@ public class Student extends Person {
         this.matrikelnummer = matrikelnummer;
     }
 
-
     @Override
     public String printInfo() {
-        return  "Student -> " +  super.printInfo()  + ", Matrikelnummer: " + matrikelnummer;
+        return "Student -> " + super.printInfo() + ", Matrikelnummer: " + matrikelnummer;
+    }
+
+
+    public static void test() {
+        System.out.println("Test");
     }
 }

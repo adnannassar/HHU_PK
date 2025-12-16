@@ -1,4 +1,4 @@
-package Verebung;
+package Vererbung.Grundlagen;
 
 public class Mitarbeiter extends Person {
     private double gehalt;

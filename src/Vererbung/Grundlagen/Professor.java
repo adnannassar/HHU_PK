@@ -1,4 +1,4 @@
-package Verebung;
+package Vererbung.Grundlagen;
 
 public class Professor extends Person {
     private String fachbereich;

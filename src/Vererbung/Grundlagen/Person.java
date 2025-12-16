@@ -1,4 +1,4 @@
-package Verebung;
+package Vererbung.Grundlagen;
 
 public class Person {
     private String name;
