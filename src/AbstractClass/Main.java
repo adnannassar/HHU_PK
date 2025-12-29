@@ -11,5 +11,7 @@ public class Main {
         System.out.println("Fläche von Rectangle: " + rec.berechneFläche());
         System.out.println("Fläche von Circle: " + cr.berechneFläche());
         System.out.println("Fläche von Triangle: " + tr.berechneFläche());
+
+        Shape s = new Square("Square 1", "Red", 2);
     }
 }
