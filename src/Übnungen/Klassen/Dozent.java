@@ -1,7 +1,6 @@
 package Übnungen.Klassen;
 
 public class Dozent {
-
     String name;
     String lehrgebiet;
     boolean dekan = false;
@@ -43,5 +42,16 @@ public class Dozent {
 
     char getGeschlecht() {
         return geschlecht;
+    }
+
+    @Override
+    public String toString() {
+        String dekanStatus;
+        if (isDekan()) {
+            dekanStatus = "Ja";
+        } else {
+            dekanStatus = "Nein";
+        }
+        return "\nDozent: " + name + ", " + geschlecht + ", " + lehrgebiet + " , Is Dozent ein Dekan? " + dekanStatus;
     }
 }

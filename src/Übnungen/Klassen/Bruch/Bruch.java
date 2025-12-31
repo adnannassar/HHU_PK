@@ -1,5 +1,7 @@
 package Übnungen.Klassen.Bruch;
 
+import java.util.Objects;
+
 public class Bruch {
     private int zähler;
     private int nenner;
@@ -40,6 +42,8 @@ public class Bruch {
         return c;
     }
 
-    // toString
-
+    @Override
+    public String toString() {
+        return zähler + "/" + nenner;
+    }
 }
