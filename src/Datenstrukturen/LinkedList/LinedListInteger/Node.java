@@ -1,4 +1,4 @@
-package Datenstrukturen.LinkedList;
+package Datenstrukturen.LinkedList.LinedListInteger;
 
 public class Node {
     int value;

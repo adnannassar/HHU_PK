@@ -1,4 +1,4 @@
-package Datenstrukturen.LinkedList;
+package Datenstrukturen.LinkedList.LinedListInteger;
 
 public class MyLinkedList {
     Node head;
@@ -37,6 +37,11 @@ public class MyLinkedList {
     public void insert(int value, int index) {
         if (index < 0) {
             System.out.println("Index muss > 0 sein!");
+        } else if (index == 0) {
+            Node newNode = new Node(value, head);
+            head = newNode;
+        } else if (index >= size()) {
+            add(value);
         } else {
             Node pointer = head;
             int i = 0;
@@ -48,6 +53,43 @@ public class MyLinkedList {
             newNode.next = pointer.next;
             pointer.next = newNode;
         }
+    }
 
+    public int size() {
+        int counter = 0;
+        Node pointer = head;
+        while (pointer != null) {
+            pointer = pointer.next;
+            counter++;
+        }
+
+        return counter;
+    }
+
+    public boolean search(int value) {
+        Node pointer = head;
+        while (pointer != null) {
+            if (pointer.value == value) {
+                return true;
+            }
+            pointer = pointer.next;
+        }
+        return false;
+    }
+
+    public void delete(int value) {
+        if (head.value == value) {
+            head = head.next;
+        } else {
+            Node pointer = head;
+            Node before_pointer = head;
+            while (pointer != null) {
+                if (pointer.value == value) {
+                    before_pointer.next = pointer.next;
+                }
+                before_pointer = pointer;
+                pointer = pointer.next;
+            }
+        }
     }
 }
