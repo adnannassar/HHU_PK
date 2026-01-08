@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Adresse a1 = new Adresse("Test", "1", "12345", "Dortmund", "Deutschland");
 
-        Student s1 = new Student("Ammer", 50, 123456789, a1);
+        Student s1 = new Student("KAKE", 50, 123456789, a1);
 
         System.out.println();
         System.out.println(s1.getName());
