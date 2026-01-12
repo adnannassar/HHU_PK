@@ -4,7 +4,7 @@ package Datenstrukturen.Generic;
 
 public class MainPerson {
     public static void main(String[] args) {
-        MyLinkedList<Person> myList = new MyLinkedList<Person>();
+        MyGenericLinkedList<Person> myList = new MyGenericLinkedList<Person>();
 
         Person p1 = new Person("Bashir", 25);
         Person p2 = new Person("Ammar", 21);

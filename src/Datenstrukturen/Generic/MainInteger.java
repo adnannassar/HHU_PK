@@ -2,7 +2,7 @@ package Datenstrukturen.Generic;
 
 public class MainInteger {
     public static void main(String[] args) {
-        MyLinkedList<Integer> myList = new MyLinkedList<Integer>();
+        MyGenericLinkedList<Integer> myList = new MyGenericLinkedList<Integer>();
 
         myList.add(1);
         myList.add(2);

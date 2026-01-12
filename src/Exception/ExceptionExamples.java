@@ -19,16 +19,16 @@ public class ExceptionExamples {
 
         try {
             div(10, 0);
-        } catch (ArithmeticException e) {
+        } catch (DivDurchNull e) {
             System.out.println("Nicht definiert!");
         }
 
         System.out.println("HALLO");
     }
 
-    public static int div(int a, int b) throws ArithmeticException {
+    public static int div(int a, int b) throws DivDurchNull {
         if (b == 0) {
-            throw new ArithmeticException("Nicht definiert!");
+            throw new DivDurchNull("Div durch null ist nicht definiert!");
         }
         return a / b;
     }

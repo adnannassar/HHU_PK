@@ -3,7 +3,7 @@ package Datenstrukturen.Generic;
 
 public class MainString {
     public static void main(String[] args) {
-        MyLinkedList<String> myList = new MyLinkedList<String>();
+        MyGenericLinkedList<String> myList = new MyGenericLinkedList<String>();
 
         myList.add("Bashir");
         myList.add("Ammar");

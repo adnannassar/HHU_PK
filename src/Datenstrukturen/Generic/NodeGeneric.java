@@ -1,10 +1,10 @@
 package Datenstrukturen.Generic;
 
-public class Node<T> {
+public class NodeGeneric<T> {
     T value;
-    Node next;
+    NodeGeneric next;
 
-    public Node(T value, Node next) {
+    public NodeGeneric(T value, NodeGeneric next) {
         this.value = value;
         this.next = next;
     }
