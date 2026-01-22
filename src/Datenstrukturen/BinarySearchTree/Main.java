@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Datenstrukturen.BinarySearchTree;
 
 public class Main {
     static BinarySearchTree bst = new BinarySearchTree();

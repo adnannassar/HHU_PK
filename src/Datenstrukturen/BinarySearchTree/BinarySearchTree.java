@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Datenstrukturen.BinarySearchTree;
 
 public class BinarySearchTree {
     Node root;
