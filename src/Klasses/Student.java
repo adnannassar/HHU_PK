@@ -19,7 +19,6 @@ public class Student {
         this.name = name;
     }
 
-
     // getter
     public String getName() {
         return name;
