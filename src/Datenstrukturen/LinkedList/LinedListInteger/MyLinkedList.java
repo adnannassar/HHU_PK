@@ -1,5 +1,7 @@
 package Datenstrukturen.LinkedList.LinedListInteger;
 
+import Datenstrukturen.Generic.NodeGeneric;
+
 public class MyLinkedList {
     Node head;
 
@@ -91,5 +93,70 @@ public class MyLinkedList {
                 pointer = pointer.next;
             }
         }
+    }
+
+    public int max() throws IllegalStateException {
+        if (isEmpty()) {
+            throw new IllegalStateException("List is empty!");
+        }
+        Node pointer = head;
+        int max = head.value;
+        while (pointer != null) {
+            if (pointer.value > max) {
+                max = pointer.value;
+            }
+            pointer = pointer.next;
+        }
+        return max;
+    }
+
+    public int min() throws IllegalStateException {
+        if (isEmpty()) {
+            throw new IllegalStateException("List is empty!");
+        }
+        Node pointer = head;
+        int min = head.value;
+        while (pointer != null) {
+            if (pointer.value < min) {
+                min = pointer.value;
+            }
+            pointer = pointer.next;
+        }
+        return min;
+    }
+
+    public int sum() {
+        if (isEmpty()) {
+            return 0;
+        }
+        Node pointer = head;
+        int summe = 0;
+        while (pointer != null) {
+            summe += pointer.value;
+            pointer = pointer.next;
+        }
+        return summe;
+    }
+
+    public int average() throws IllegalStateException {
+        if (isEmpty()) {
+            throw new IllegalStateException("List is empty!");
+        }
+        return sum() / size();
+    }
+
+    public boolean isSorted() {
+        if (isEmpty() || size() == 1) {
+            return true;
+        } else {
+            Node pointer = head;
+            while (pointer.next != null) {
+                if (pointer.value > pointer.next.value) {
+                    return false;
+                }
+                pointer = pointer.next;
+            }
+        }
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package Datenstrukturen.Generic;
+package Datenstrukturen.DoublyLinkesList;
 
 public class MainInteger {
     public static void main(String[] args) {
@@ -10,6 +10,10 @@ public class MainInteger {
         myList.add(5);
 
         myList.printInfo();
+
+        MyGenericLinkedList<Integer> umgekehrteList = myList.reverse();
+        System.out.print("UmgekehrteList: " );
+        umgekehrteList.printInfo();
 
         myList.insert(3, 2);
 
@@ -43,30 +47,5 @@ public class MainInteger {
 
         System.out.println("Value at index 2: " +  myList.get(2));
 
-
-        MyGenericLinkedList<Integer> list2 = new MyGenericLinkedList<Integer>();
-        list2.add(10);
-        list2.add(20);
-        list2.add(30);
-
-        System.out.print("List 1: ");
-        myList.printInfo();
-
-        System.out.print("List 2: ");
-        list2.printInfo();
-
-
-        MyGenericLinkedList<Integer> mergedList = myList.mixAlternate(list2);
-        System.out.print("MergedList 2: ");
-        mergedList.printInfo();
-
-
-        mergedList.printInfo();
-        System.out.println("Ist die List sortiert: " + mergedList.isSorted() );
-
-        mergedList.add(3);
-
-        mergedList.printInfo();
-        System.out.println("Ist die List sortiert: " + mergedList.isSorted() );
     }
 }

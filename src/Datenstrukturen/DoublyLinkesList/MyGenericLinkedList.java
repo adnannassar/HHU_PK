@@ -1,8 +1,6 @@
-package Datenstrukturen.Generic;
+package Datenstrukturen.DoublyLinkesList;
 
-import Datenstrukturen.LinkedList.LinedListInteger.Node;
-
-public class MyGenericLinkedList<T extends Comparable<T>> {
+public class MyGenericLinkedList<T> {
     NodeGeneric<T> head;
 
     public boolean isEmpty() {
@@ -16,14 +14,15 @@ public class MyGenericLinkedList<T extends Comparable<T>> {
     public void add(T value) {
         if (isEmpty()) {
             // head add
-            head = new NodeGeneric<T>(value, null);
+            head = new NodeGeneric<T>(value, null, null);
         } else {
             NodeGeneric<T> pointer = head;
             while (pointer.next != null) {
                 pointer = pointer.next;
             }
-            NodeGeneric<T> newNode = new NodeGeneric<T>(value, null);
+            NodeGeneric<T> newNode = new NodeGeneric<T>(value, null, null);
             pointer.next = newNode;
+            newNode.previous = pointer;
         }
     }
 
@@ -42,7 +41,8 @@ public class MyGenericLinkedList<T extends Comparable<T>> {
         if (index < 0) {
             System.out.println("Index muss > 0 sein!");
         } else if (index == 0) {
-            NodeGeneric<T> newNode = new NodeGeneric<T>(value, head);
+            NodeGeneric<T> newNode = new NodeGeneric<T>(value, head, null);
+            head.previous = newNode;
             head = newNode;
         } else if (index >= size()) {
             add(value);
@@ -53,9 +53,11 @@ public class MyGenericLinkedList<T extends Comparable<T>> {
                 pointer = pointer.next;
                 i++;
             }
-            NodeGeneric<T> newNode = new NodeGeneric<T>(value, null);
+            NodeGeneric<T> newNode = new NodeGeneric<T>(value, null, null);
             newNode.next = pointer.next;
             pointer.next = newNode;
+            newNode.previous = pointer;
+            pointer.previous.next = newNode;
         }
     }
 
@@ -111,37 +113,19 @@ public class MyGenericLinkedList<T extends Comparable<T>> {
         }
     }
 
-    public MyGenericLinkedList<T> mixAlternate(MyGenericLinkedList<T> other) {
-        MyGenericLinkedList<T> erg = new MyGenericLinkedList<T>();
-
+    public MyGenericLinkedList<T> reverse() {
+        MyGenericLinkedList<T> erg = new MyGenericLinkedList<>();
         NodeGeneric<T> pointer = head;
-        while (pointer != null) {
-            erg.add(pointer.value);
+
+        while (pointer.next != null) {
             pointer = pointer.next;
         }
 
-        NodeGeneric<T> pointerOther = other.head;
-        while (pointerOther != null) {
-            erg.add(pointerOther.value);
-            pointerOther = pointerOther.next;
+        while (pointer != null) {
+            erg.add(pointer.value);
+            pointer = pointer.previous;
         }
 
         return erg;
-    }
-
-    public boolean isSorted() {
-        if (isEmpty() || size() == 1) {
-            return true;
-        } else {
-            NodeGeneric<T> pointer = head;
-            while (pointer.next != null) {
-                int compare = pointer.value.compareTo(pointer.next.value);
-                if (compare > 0) {
-                    return false;
-                }
-                pointer = pointer.next;
-            }
-        }
-        return true;
     }
 }

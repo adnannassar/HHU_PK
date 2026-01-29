@@ -1,6 +1,6 @@
-package Datenstrukturen.Generic;
+package Datenstrukturen.DoublyLinkesList;
 
-public class Person implements Comparable<Person> {
+public class Person {
     private String name;
     private int age;
 
@@ -28,10 +28,5 @@ public class Person implements Comparable<Person> {
     @Override
     public String toString() {
         return "(" + name + "_" + age + ")";
-    }
-
-    @Override
-    public int compareTo(Person o) {
-        return  this.name.compareTo(o.name);
     }
 }

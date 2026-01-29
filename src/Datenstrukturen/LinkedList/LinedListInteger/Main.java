@@ -41,5 +41,20 @@ public class Main {
         myList.printInfo();
         System.out.println("Size: " + myList.size());
 
+        System.out.println("Max :" + myList.max());
+        System.out.println("Min :" + myList.min());
+
+        System.out.println("Summe: " + myList.sum());
+        System.out.println("Average: " + myList.average());
+
+        myList.printInfo();
+        System.out.println("Ist die List sortiert: " + myList.isSorted() );
+
+        myList.add(3);
+
+        myList.printInfo();
+        System.out.println("Ist die List sortiert: " + myList.isSorted() );
+
+
     }
 }
