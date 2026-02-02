@@ -2,7 +2,6 @@ package PrintFormat;
 
 public class Main {
     public static void main(String[] args) {
-
         float x = 10.5f;
         float y = 20.5f;
         int z = 30;
