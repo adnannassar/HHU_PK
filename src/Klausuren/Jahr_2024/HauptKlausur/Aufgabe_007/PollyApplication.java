@@ -6,6 +6,5 @@ public class PollyApplication {
         African african = new African(voiceMail, 1);
         System.out.println(african.getSpeed());
         african.read();
-
     }
 }
